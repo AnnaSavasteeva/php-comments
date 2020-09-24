@@ -1,6 +1,6 @@
 <?php
 
-$host = 'localhost';
-$user = 'root';
-$password = '';
-$db_name = 'db_future';
+const DB_HOST = 'localhost';
+const DB_USER = 'root';
+const DB_PASS = '';
+const DB_NAME = 'db_future';

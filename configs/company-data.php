@@ -1,4 +1,6 @@
 <?php
+$id = (new \Future\Core\Company())->getId();
 
-$data = get_all_data($db, '*', 'future_group');
-$company = mysqli_fetch_assoc($data);
+while($row = mysqli_fetch_assoc($id)) {
+    $company = new \Future\Core\Company($row['id']);
+}

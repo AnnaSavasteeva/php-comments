@@ -2,14 +2,14 @@
 
 <footer>
     <div class='footer-wrapper'>
-        <img src='<?= $company['logo'] ?>' alt='Логотип Future Internet agency' class='logo-footer'>
+        <img src='<?= $company->getLogo(); ?>' alt='Логотип Future Internet agency' class='logo-footer'>
         <div>
             <div class='contacts'>
-                <p>Телефон: <?= $company['phone'] ?></p>
-                <p>Email: <span class='underline'><?= $company['email'] ?></span></p>
-                <p>Адрес: <span class='underline'><?= $company['address'] ?></span></p>
+                <p>Телефон: <?= $company->getPhone(); ?></p>
+                <p>Email: <span class='underline'><?= $company->getEmail(); ?></span></p>
+                <p>Адрес: <span class='underline'><?= $company->getAddress(); ?></span></p>
             </div>
-            <p class='copyright'><?= $company['copyright'] ?></p>
+            <p class='copyright'><?= $company->getCopyright(); ?></p>
         </div>
     </div>
 </footer>

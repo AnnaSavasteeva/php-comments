@@ -1,4 +1,9 @@
-<?php include_once($_SERVER['DOCUMENT_ROOT'] . '/configs/configs.php'); ?>
+<?php
+    // Data for database connection
+    include_once($_SERVER['DOCUMENT_ROOT'] . '/configs/db.php');
+
+    include_once($_SERVER['DOCUMENT_ROOT'] . '/configs/configs.php');
+?>
 
 <!DOCTYPE html>
 <html lang='ru'>
@@ -17,10 +22,10 @@
         <div class='header-wrapper'>
             <h1><?= $title ?></h1>
             <div class='contacts'>
-                <p>Телефон: <?= $company['phone'] ?></p>
-                <p>Email: <span class='underline'><?= $company['email'] ?></span></p>
+                <p>Телефон: <?= $company->getPhone(); ?></p>
+                <p>Email: <span class='underline'><?= $company->getEmail(); ?></span></p>
             </div>
-            <img src='<?= $company['logo'] ?>' alt='Логотип Future Internet agency' class='logo-header'>
+            <img src='<?= $company->getLogo(); ?>' alt='Логотип Future Internet agency' class='logo-header'>
         </div>
     </header>
 

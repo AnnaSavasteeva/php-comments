@@ -8,17 +8,19 @@
 
 <section>
     <?php
-        $comments = get_limited_data($db, '*', 'comments');
-        while ($comment = mysqli_fetch_assoc($comments)):
+        $id = (new \Future\Users\Comments())->getId('DESC', 3);
+
+        while ($row = mysqli_fetch_assoc($id)) {
+            $comment = new \Future\Users\Comments($row['id']);
     ?>
-        <p class='comment-author'><?= $comment['author'] ?>
-            <span class='comment-date-time'>
-                <span><?= $comment['time'] ?></span>
-                <?= $comment['date'] ?>
-            </span>
-        </p>
-        <p class='comment-text'><?= $comment['message'] ?></p>
-    <?php endwhile; ?>
+            <p class='comment-author'><?= $comment->getAuthor(); ?>
+                <span class='comment-date-time'>
+                    <span><?= $comment->getTime(); ?></span>
+                    <?= $comment->getDate(); ?>
+                </span>
+            </p>
+            <p class='comment-text'><?= $comment->getMessage(); ?></p>
+    <?php } ?>
 </section>
 
 <p class='form-comments-title'>Оставить комментарий</p>
